@@ -16,6 +16,7 @@
     {{ end }}
     {{ with or .Params.image .Site.Params.Header.image }}
     <meta name="og:type" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="og:image" content="{{ $baseUrl }}{{ . }}">
     {{ end }}
     <meta name="og:description" content="{{ or .Summary .Site.Params.Header.description }}">
