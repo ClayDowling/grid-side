@@ -18,7 +18,7 @@
     <meta name="og:type" content="summary_large_image">
     <meta name="og:image" content="{{ $baseUrl }}{{ . }}">
     {{ end }}
-    <meta name="og:description" content="{{ .Summary }}">
+    <meta name="og:description" content="{{ or .Summary .Site.Params.Header.description }}">
     <meta name="og:title" content="{{ .Title }}">
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
