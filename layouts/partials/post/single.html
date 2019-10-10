@@ -8,7 +8,7 @@
     <div class="main-content">
         <div class="center-space">
             <div class="article-colors">
-                {{ with .Params.image }}
+                {{ range .Params.images }}
                     <img src="{{ . }}" class="fill-container-width"></img>
                 {{ end }}
                 <article>

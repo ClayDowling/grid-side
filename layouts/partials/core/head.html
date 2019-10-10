@@ -11,16 +11,8 @@
     {{ end }}
     {{ .Hugo.Generator }}
     <meta name="generation-date" content="{{ now }}">
-    {{ with .Site.Params.Social.twitter }}
-    <meta name="twitter:site" content="{{ . }}">
-    {{ end }}
-    {{ with or .Params.image .Site.Params.Header.image }}
-    <meta name="og:type" content="summary_large_image">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="og:image" content="{{ $baseUrl }}{{ . }}">
-    {{ end }}
-    <meta name="og:description" content="{{ or .Summary .Site.Params.Header.description }}">
-    <meta name="og:title" content="{{ .Title }}">
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
     <link rel="shortcut icon" href="{{ .Site.BaseURL }}img/favicon.ico">
     <link rel="icon" href="{{ .Site.BaseURL }}img/favicon.ico">
